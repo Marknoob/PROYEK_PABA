@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -16,6 +17,9 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        
+        val inputUsername = findViewById<EditText>(R.id.ed_username)
+        val inputPassword = findViewById<EditText>(R.id.ed_password)
 
         val _btnLogin = findViewById<Button>(R.id.btn_login)
         _btnLogin.setOnClickListener {
