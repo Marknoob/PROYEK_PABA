@@ -12,7 +12,7 @@ import okhttp3.Request
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.bmi_calculator_page)
 
         // Launch a coroutine to perform the API request in the background
         GlobalScope.launch(Dispatchers.Main) {
