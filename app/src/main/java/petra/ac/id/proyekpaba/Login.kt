@@ -17,7 +17,7 @@ class Login : AppCompatActivity() {
 
         val _btnLogin = findViewById<Button>(R.id.btn_login)
         _btnLogin.setOnClickListener {
-            val intent= Intent(this@Login, Home::class.java)
+            val intent= Intent(this@Login, adapter_BMI_Calculator_Page::class.java)
             startActivity(intent)
         }
 

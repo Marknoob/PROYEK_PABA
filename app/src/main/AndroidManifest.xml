@@ -21,6 +21,9 @@
             android:name=".Home"
             android:exported="false" />
         <activity
+            android:name=".adapter_BMI_Calculator_Page"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>

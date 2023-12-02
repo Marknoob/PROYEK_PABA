@@ -18,22 +18,15 @@ class adapter_BMI_Calculator_Page: AppCompatActivity() {
         val btnPlusAge = findViewById<Button>(R.id.btn_plusAge)
         val btnMinusAge = findViewById<Button>(R.id.btn_minusAge)
 
-        /*btnPlusAge.setOnClickListener {
+        var ageValue = 0
+        btnPlusAge.setOnClickListener {
             if(edt_age != null) {
+                ageValue = Integer.parseInt(edt_age.text.toString())
                 edt_age.setText("${ageValue + 1}")
             }
-        }*/
-
-        var ageValue = 0
-
-        btnPlusAge.setOnClickListener {
-            println("Hasil: $edt_age")
-            ageValue = Integer.parseInt(edt_age.text.toString())
-            edt_age.setText("${ageValue + 1}")
         }
 
         btnMinusAge.setOnClickListener {
-            println("Hasil: $edt_age")
             ageValue = Integer.parseInt(edt_age.text.toString())
             if (ageValue > 0) {
                 edt_age.setText("${ageValue - 1}")
@@ -46,6 +39,9 @@ class adapter_BMI_Calculator_Page: AppCompatActivity() {
         val btnPlusHeight = findViewById<Button>(R.id.btn_plusHeight)
         val btnMinusHeight = findViewById<Button>(R.id.btn_minusHeight)
 
-
+        val btnCalculate = findViewById<Button>(R.id.btn_calculate)
+        btnCalculate.setOnClickListener {
+            println("Tertekan")
+        }
     }
 }
