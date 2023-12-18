@@ -85,8 +85,6 @@ class adapter_BMI_Calculator_Page: AppCompatActivity() {
             }
         }
 
-
-
         val btnCalculate = findViewById<Button>(R.id.btn_calculate)
         btnCalculate.setOnClickListener {
             println("Tertekan")
