@@ -15,13 +15,22 @@
         android:theme="@style/Theme.PROYEKPABA"
         tools:targetApi="31">
         <activity
+            android:name=".Daily_Calorie_Requirements"
+            android:exported="false" />
+        <activity
+            android:name=".Body_Fat_Percentage"
+            android:exported="false" />
+        <activity
+            android:name=".Ideal_Weight"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".adapter_BMI_Calculator_Page"
+            android:name=".BMI_Calculator"
             android:exported="false" />
         <activity
             android:name=".Login"

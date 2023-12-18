@@ -3,9 +3,10 @@ package petra.ac.id.proyekpaba
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class adapter_BMI_Calculator_Page: AppCompatActivity() {
+class BMI_Calculator: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +72,7 @@ class adapter_BMI_Calculator_Page: AppCompatActivity() {
                 heightValue = Integer.parseInt(edt_height.text.toString())
                 edt_height.setText("${heightValue + 1}")
             } else {
-                edt_weight.setText("1")
+                edt_height.setText("1")
             }
         }
         btnMinusHeight.setOnClickListener {
@@ -87,7 +88,16 @@ class adapter_BMI_Calculator_Page: AppCompatActivity() {
 
         val btnCalculate = findViewById<Button>(R.id.btn_calculate)
         btnCalculate.setOnClickListener {
-            println("Tertekan")
+            if(edt_age.text.isNotEmpty() && edt_weight.text.isNotEmpty() && edt_height.text.isNotEmpty()) {
+                println("Tertekan")
+                // Panggil API disini
+            } else {
+                Toast.makeText(
+                    this,
+                    "Data Tidak Boleh Kosong",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 }
