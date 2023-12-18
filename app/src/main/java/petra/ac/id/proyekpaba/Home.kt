@@ -2,17 +2,26 @@ package petra.ac.id.proyekpaba
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import java.text.DateFormat
+import java.util.Calendar
 
-class Home : AppCompatActivity() {
+class Home: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.bmi_calculator_page)
+        setContentView(R.layout.activity_home)
+
+        val calendar = Calendar.getInstance()
+        val currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime())
+
+        val date = findViewById<TextView>(R.id.tanggal)
+        date.setText(currentDate)
 
         // Launch a coroutine to perform the API request in the background
         GlobalScope.launch(Dispatchers.Main) {

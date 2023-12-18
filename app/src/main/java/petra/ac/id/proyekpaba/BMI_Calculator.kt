@@ -91,6 +91,7 @@ class BMI_Calculator: AppCompatActivity() {
             if(edt_age.text.isNotEmpty() && edt_weight.text.isNotEmpty() && edt_height.text.isNotEmpty()) {
                 println("Tertekan")
                 // Panggil API disini
+
             } else {
                 Toast.makeText(
                     this,
