@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:background="#E3EBED"
+    tools:context=".BMI_History">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BMI History"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_BMI_History"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:padding="10dp">
+
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_BackToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Button" />
+
+</LinearLayout>

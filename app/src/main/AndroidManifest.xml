@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PROYEKPABA"
         tools:targetApi="31">
         <activity
+            android:name=".BMI_History"
+            android:exported="false" />
+        <activity
             android:name=".Daily_Calorie_Requirements"
             android:exported="false" />
         <activity

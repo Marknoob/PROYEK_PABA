@@ -1,5 +1,7 @@
 package petra.ac.id.proyekpaba
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -7,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -14,6 +17,8 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONObject
+import java.text.DateFormat
+import java.util.Calendar
 
 class BMI_Calculator: AppCompatActivity() {
 
@@ -31,7 +36,7 @@ class BMI_Calculator: AppCompatActivity() {
             val request = Request.Builder()
                 .url(url)
                 .get()
-                .addHeader("X-RapidAPI-Key", "d7d9e0b0d0msh4ca54b57a1aaaadp117c7cjsnc24d5d92480b")
+                .addHeader("X-RapidAPI-Key", "41bb703e3emsh9a6d561323de3a8p1ab405jsnc05899f3c241")  // Ini API Key Markus
                 .addHeader("X-RapidAPI-Host", "fitness-calculator.p.rapidapi.com")
                 .build()
 
@@ -51,10 +56,11 @@ class BMI_Calculator: AppCompatActivity() {
             return@withContext BmiInfo(bmiScore, health, healthyBmiRange)
         }
 
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.bmi_calculator_page)
+        setContentView(R.layout.activity_bmi_calculator)
 
         val edt_age = findViewById<EditText>(R.id.ed_age)
         val edt_weight = findViewById<EditText>(R.id.ed_weight)
@@ -69,6 +75,9 @@ class BMI_Calculator: AppCompatActivity() {
 
         val _tvScoreBMI = findViewById<TextView>(R.id.score_BMI)
         val _tvDetailBMI = findViewById<TextView>(R.id.detail_penjelasan)
+
+        val btnLihatHistory = findViewById<Button>(R.id.btn_lihatHistory)
+        val btnBackToHome = findViewById<Button>(R.id.btn_backToHome)
 
         // Age
         var ageValue: Int
@@ -162,9 +171,34 @@ class BMI_Calculator: AppCompatActivity() {
                         } else if(bmiInfo.score >= 40) {
                             _tvScoreBMI.setTextColor(Color.parseColor("#F82C14"))
                         }
-
-
                         _tvDetailBMI.text = "Health: \n${bmiInfo.health}\n\nHealthy BMI Range: \n${bmiInfo.healthyBmiRange}"
+
+
+                        // Simpan hasil kedalam database dengan format dataClass BMI_Result
+
+                        // Menggunakan shared preferences untuk mendapatkan nama
+                        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                        val userName = sharedPreferences.getString("userName", "")
+
+                        // Mendapatkan date
+                        val calendar = Calendar.getInstance()
+                        val currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime())
+
+                        val dataBaru = BMI_Result(
+                            userName.toString(),
+                            age.toString(),
+                            weight.toString(),
+                            height.toString(),
+                            bmiInfo.score.toString(),
+                            bmiInfo.health,
+                            currentDate
+                        )
+
+                        // Simpan ke database
+                        db.collection("tbBMI_Result")
+                            .document(userName.toString())
+                            .set(dataBaru)
+
                     } catch (e: Exception) {
                         Toast.makeText(
                             this@BMI_Calculator,
@@ -182,6 +216,18 @@ class BMI_Calculator: AppCompatActivity() {
                 ).show()
             }
         }
+
+        btnLihatHistory.setOnClickListener {
+            val intent = Intent(this@BMI_Calculator, Login::class.java)
+            startActivity(intent)
+        }
+
+        btnBackToHome.setOnClickListener {
+            val intent = Intent(this@BMI_Calculator, Home::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
 //    private suspend fun makeApiRequest(): String = withContext(Dispatchers.IO) {
