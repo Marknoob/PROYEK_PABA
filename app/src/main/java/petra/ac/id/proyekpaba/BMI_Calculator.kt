@@ -218,7 +218,7 @@ class BMI_Calculator: AppCompatActivity() {
         }
 
         btnLihatHistory.setOnClickListener {
-            val intent = Intent(this@BMI_Calculator, Login::class.java)
+            val intent = Intent(this@BMI_Calculator, BMI_History::class.java)
             startActivity(intent)
         }
 

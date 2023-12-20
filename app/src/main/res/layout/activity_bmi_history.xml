@@ -16,29 +16,21 @@
         android:text="BMI History"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
 
-    <androidx.cardview.widget.CardView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_BMI_History"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_BMI_History"
-            android:layout_width="match_parent"
-            android:layout_height="550dp"
-            android:padding="10dp">
-
-
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </androidx.cardview.widget.CardView>
+        android:layout_height="550dp"
+        android:padding="10dp">
+    </androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/btn_BackToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Button" />
+        android:text="Home" />
 
 </LinearLayout>
