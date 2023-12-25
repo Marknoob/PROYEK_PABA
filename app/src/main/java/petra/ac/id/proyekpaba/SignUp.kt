@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
+import petra.ac.id.proyekpaba.markus.Account
 
 class SignUp : AppCompatActivity() {
 

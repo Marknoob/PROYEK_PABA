@@ -5,7 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import petra.ac.id.proyekpaba.markus.BMI_Calculator
 import java.text.DateFormat
 import java.util.Calendar
 
@@ -27,10 +29,15 @@ class Home: AppCompatActivity() {
         val userName = sharedPreferences.getString("userName", "")
         name.text = "Hi, $userName"
 
-
         val _btnTestBMI = findViewById<Button>(R.id.btn_TestBMI)
         _btnTestBMI.setOnClickListener {
             val intent = Intent(this@Home, BMI_Calculator::class.java)
+            startActivity(intent)
+        }
+
+        val _btnSetting = findViewById<ImageView>(R.id.btn_setting)
+        _btnSetting.setOnClickListener {
+            val intent = Intent(this@Home, Setting::class.java)
             startActivity(intent)
         }
     }

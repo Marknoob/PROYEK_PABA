@@ -13,7 +13,7 @@
         android:padding="20dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:background="#E3EBED"
-        tools:context=".BMI_Calculator">
+        tools:context=".markus.BMI_Calculator">
 
         <TextView
             android:layout_width="match_parent"

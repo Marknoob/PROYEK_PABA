@@ -1,4 +1,4 @@
-package petra.ac.id.proyekpaba
+package petra.ac.id.proyekpaba.markus
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -23,3 +23,4 @@ data class BMI_Card(
     val scoreBMI: String,
     val statusBMI: String,
 ): Parcelable
+

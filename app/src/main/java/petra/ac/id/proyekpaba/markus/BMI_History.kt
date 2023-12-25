@@ -1,4 +1,4 @@
-package petra.ac.id.proyekpaba
+package petra.ac.id.proyekpaba.markus
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
+import petra.ac.id.proyekpaba.Home
+import petra.ac.id.proyekpaba.R
 
 class BMI_History : AppCompatActivity() {
 
@@ -53,7 +55,8 @@ class BMI_History : AppCompatActivity() {
                     val adapterP = adapterBMI_History(listDataBMI_History)
                     _rvBMI_History.adapter = adapterP
 
-                    adapterP.setOnItemClickCallback(object : adapterBMI_History.OnItemClickCallback {
+                    adapterP.setOnItemClickCallback(object :
+                        adapterBMI_History.OnItemClickCallback {
                         // Saat card ditekan
                         override fun onItemClicked(data: BMI_Card) {
                             val intent = Intent(this@BMI_History, BMI_Calculator::class.java)

@@ -8,7 +8,7 @@
     android:padding="20dp"
     android:fontFamily="sans-serif-condensed-medium"
     android:background="#E3EBED"
-    tools:context=".Ideal_Weight">
+    tools:context=".calvin.Ideal_Weight">
 
     <TextView
         android:layout_width="match_parent"

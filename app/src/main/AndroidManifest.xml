@@ -15,16 +15,19 @@
         android:theme="@style/Theme.PROYEKPABA"
         tools:targetApi="31">
         <activity
-            android:name=".BMI_History"
+            android:name=".Setting"
             android:exported="false" />
         <activity
-            android:name=".Daily_Calorie_Requirements"
+            android:name=".markus.BMI_History"
             android:exported="false" />
         <activity
-            android:name=".Body_Fat_Percentage"
+            android:name=".calvin.Daily_Calorie_Requirements"
             android:exported="false" />
         <activity
-            android:name=".Ideal_Weight"
+            android:name=".billy.Body_Fat_Percentage"
+            android:exported="false" />
+        <activity
+            android:name=".calvin.Ideal_Weight"
             android:exported="false" />
         <activity
             android:name=".SignUp"
@@ -33,7 +36,7 @@
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".BMI_Calculator"
+            android:name=".markus.BMI_Calculator"
             android:exported="false" />
         <activity
             android:name=".Login"
