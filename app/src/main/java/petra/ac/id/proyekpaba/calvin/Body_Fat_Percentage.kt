@@ -1,10 +1,13 @@
 package petra.ac.id.proyekpaba.calvin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.TextView
+import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -13,6 +16,7 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONObject
+import petra.ac.id.proyekpaba.Home
 import petra.ac.id.proyekpaba.R
 
 class Body_Fat_Percentage : AppCompatActivity() {
@@ -101,6 +105,8 @@ class Body_Fat_Percentage : AppCompatActivity() {
         val edt_waist = findViewById<EditText>(R.id.ed_waist)
         val edt_hip = findViewById<EditText>(R.id.ed_hip)
 
+        lateinit var genderValue: String
+
         val rdb_male = findViewById<RadioButton>(R.id.rb_male)
         val rdb_female = findViewById<RadioButton>(R.id.rb_female)
 
@@ -117,7 +123,13 @@ class Body_Fat_Percentage : AppCompatActivity() {
         val btn_plusHip = findViewById<Button>(R.id.btn_plusHip)
         val btn_minusHip = findViewById<Button>(R.id.btn_minusHip)
 
-        val btn_calculate = findViewById<Button>(R.id.btn_calculate)
+        val score_navymethod = findViewById<TextView>(R.id.score_navyMethod)
+        val score_category = findViewById<TextView>(R.id.score_Category)
+        val score_fatmass = findViewById<TextView>(R.id.score_fatMass)
+        val score_leanbodymass = findViewById<TextView>(R.id.score_leanBodyMass)
+        val score_bmimethod = findViewById<TextView>(R.id.score_bmiMethod)
+
+        val btn_back = findViewById<Button>(R.id.btn_backhome)
 
 
         /*// Age
@@ -163,7 +175,7 @@ class Body_Fat_Percentage : AppCompatActivity() {
         }
 
         //gender
-        var genderValue: String
+//        late init var genderValue: String
         rdb_male.setOnClickListener {
             genderValue = "male"
         }
@@ -277,8 +289,54 @@ class Body_Fat_Percentage : AppCompatActivity() {
         }
 
 
+        val btncalculate = findViewById<Button>(R.id.btn_calculate)
+        btncalculate.setOnClickListener {
+            if(edt_age.text.isNotEmpty() && edt_weight.text.isNotEmpty()
+                && genderValue.isNotEmpty() && edt_height.text.isNotEmpty() && edt_neck.text.isNotEmpty()
+                && edt_waist.text.isNotEmpty() && edt_hip.text.isNotEmpty()) {
+                val age = edt_age.text.toString().toInt()
+                val weight = edt_weight.text.toString().toInt()
+                val height = edt_height.text.toString().toInt()
+                val neck = edt_neck.text.toString().toInt()
+                val waist = edt_waist.text.toString().toInt()
+                val hip = edt_hip.text.toString().toInt()
+
+                //memanggil API
+                GlobalScope.launch(Dispatchers.Main) {
+                    try {
+                        val bodyFatInfo = makeApiRequest(age, genderValue, weight,
+                            height, neck, waist, hip)
+
+                        score_navymethod.text = "Body Fat (U.S. Navy Method): ${bodyFatInfo.navyMethod}"
+                        score_category.text = "Body Fat Category: ${bodyFatInfo.category}"
+                        score_fatmass.text = "Body Fat Mass: ${bodyFatInfo.fatMass}"
+                        score_leanbodymass.text = "Lean Body Mass: ${bodyFatInfo.leanBodyMass}"
+                        score_bmimethod.text = "Body Fat (BMI method): ${bodyFatInfo.bmiMethod}"
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            this@Body_Fat_Percentage,
+                            "Terjadi kesalahan saat mengambil informasi body fat",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            }
+            else {
+                Toast.makeText(
+                    this,
+                    "Data Tidak Boleh Kosong",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        btn_back.setOnClickListener {
+            val intent = Intent(this@Body_Fat_Percentage, Home::class.java)
+            startActivity(intent)
+        }
+
         // Contoh penggunaan
-        GlobalScope.launch(Dispatchers.Main) {
+        /*GlobalScope.launch(Dispatchers.Main) {
             val bodyFatInfo = makeApiRequest(25, "male", 70, 178, 50, 96, 92)
             println("Navy Method Body Fat: ${bodyFatInfo.navyMethod}")
             println("Body Fat Category: ${bodyFatInfo.category}")
@@ -286,6 +344,6 @@ class Body_Fat_Percentage : AppCompatActivity() {
             println("Lean Body Mass: ${bodyFatInfo.leanBodyMass}")
             println("BMI Method Body Fat: ${bodyFatInfo.bmiMethod}")
         }
-
+*/
     }
 }
