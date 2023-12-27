@@ -162,7 +162,119 @@ class Body_Fat_Percentage : AppCompatActivity() {
             }
         }
 
-        
+        //gender
+        var genderValue: String
+        rdb_male.setOnClickListener {
+            genderValue = "male"
+        }
+        rdb_female.setOnClickListener {
+            genderValue = "female"
+        }
+
+        //weight
+        var weightValue: Int
+        btn_plusWeight.setOnClickListener {
+            if(edt_weight.text.isNotEmpty()) {
+                weightValue = Integer.parseInt(edt_weight.text.toString())
+                edt_weight.setText("${weightValue + 1}")
+            } else {
+                edt_weight.setText("1")
+            }
+        }
+        btn_minusWeight.setOnClickListener {
+            if(edt_weight.text.isNotEmpty()) {
+                weightValue = Integer.parseInt(edt_weight.text.toString())
+                if (weightValue > 0) {
+                    edt_weight.setText("${weightValue - 1}")
+                }
+            } else {
+                edt_weight.setText("0")
+            }
+        }
+
+        //height
+        var heightValue: Int
+        btn_plusHeight.setOnClickListener {
+            if(edt_height.text.isNotEmpty()) {
+                heightValue = Integer.parseInt(edt_height.text.toString())
+                edt_height.setText("${heightValue + 1}")
+            } else {
+                edt_height.setText("1")
+            }
+        }
+        btn_minusHeight.setOnClickListener {
+            if(edt_height.text.isNotEmpty()) {
+                heightValue = Integer.parseInt(edt_height.text.toString())
+                if (heightValue > 0) {
+                    edt_height.setText("${heightValue - 1}")
+                }
+            } else {
+                edt_height.setText("0")
+            }
+        }
+
+        //neck
+        var neckValue: Int
+        btn_plusNeck.setOnClickListener {
+            if(edt_neck.text.isNotEmpty()) {
+                neckValue = Integer.parseInt(edt_neck.text.toString())
+                edt_neck.setText("${neckValue + 1}")
+            } else {
+                edt_neck.setText("1")
+            }
+        }
+        btn_minusNeck.setOnClickListener {
+            if(edt_neck.text.isNotEmpty()) {
+                neckValue = Integer.parseInt(edt_neck.text.toString())
+                if (neckValue > 0) {
+                    edt_neck.setText("${neckValue - 1}")
+                }
+            } else {
+                edt_neck.setText("0")
+            }
+        }
+
+        //waist
+        var waistValue: Int
+        btn_plusWaist.setOnClickListener {
+            if(edt_waist.text.isNotEmpty()) {
+                waistValue = Integer.parseInt(edt_waist.text.toString())
+                edt_waist.setText("${waistValue + 1}")
+            } else {
+                edt_waist.setText("1")
+            }
+        }
+        btn_minusWaist.setOnClickListener {
+            if(edt_waist.text.isNotEmpty()) {
+                waistValue = Integer.parseInt(edt_waist.text.toString())
+                if (waistValue > 0) {
+                    edt_waist.setText("${waistValue - 1}")
+                }
+            } else {
+                edt_waist.setText("0")
+            }
+        }
+
+        //hip
+        var hipValue: Int
+        btn_plusHip.setOnClickListener {
+            if(edt_hip.text.isNotEmpty()) {
+                hipValue = Integer.parseInt(edt_hip.text.toString())
+                edt_hip.setText("${hipValue + 1}")
+            } else {
+                edt_hip.setText("1")
+            }
+        }
+        btn_minusHip.setOnClickListener {
+            if(edt_hip.text.isNotEmpty()) {
+                hipValue = Integer.parseInt(edt_hip.text.toString())
+                if (hipValue > 0) {
+                    edt_hip.setText("${hipValue - 1}")
+                }
+            } else {
+                edt_hip.setText("0")
+            }
+        }
 
 
         // Contoh penggunaan
