@@ -185,6 +185,15 @@
                     app:layout_constraintTop_toTopOf="@+id/tv_tanggal" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnbodyfat"
+            android:text="Body fat"
+            />
+
+
     </LinearLayout>
 
     <ImageView
@@ -196,5 +205,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:srcCompat="@drawable/setting" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

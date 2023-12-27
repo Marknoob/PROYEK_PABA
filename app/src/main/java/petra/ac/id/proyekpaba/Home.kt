@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
+import petra.ac.id.proyekpaba.calvin.Body_Fat_Percentage
 import petra.ac.id.proyekpaba.markus.BMI_Calculator
 import java.text.DateFormat
 import java.util.Calendar
@@ -78,5 +79,13 @@ class Home: AppCompatActivity() {
             val intent = Intent(this@Home, Setting::class.java)
             startActivity(intent)
         }
+
+
+        val btn_bodyfat = findViewById<Button>(R.id.btnbodyfat)
+        btn_bodyfat.setOnClickListener {
+            val intent = Intent(this@Home, Body_Fat_Percentage::class.java)
+            startActivity(intent)
+        }
+
     }
 }
