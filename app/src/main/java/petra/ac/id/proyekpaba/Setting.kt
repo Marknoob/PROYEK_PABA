@@ -76,7 +76,7 @@ class Setting : AppCompatActivity() {
                 "Logout dari akun $namaAkun",
                 Toast.LENGTH_LONG
             ).show()
-            
+
             val intent = Intent(this@Setting, Login::class.java)
             startActivity(intent)
         }

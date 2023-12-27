@@ -198,8 +198,7 @@ class BMI_Calculator: AppCompatActivity() {
 
                         // Simpan ke database
                         db.collection("tbBMI_Result")
-                            .document(userName.toString())
-                            .set(dataBaru)
+                            .add(dataBaru)
 
                     } catch (e: Exception) {
                         Toast.makeText(

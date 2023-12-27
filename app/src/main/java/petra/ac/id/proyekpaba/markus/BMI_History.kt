@@ -16,7 +16,7 @@ class BMI_History : AppCompatActivity() {
 
     val db = Firebase.firestore
 
-    var listDataBMI_History = ArrayList<BMI_Card>()
+    var listDataBMI_History = ArrayList<BMI_Result>()
     private lateinit var _rvBMI_History: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +39,14 @@ class BMI_History : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 listDataBMI_History.clear()
                 for (document in result) {
-                    val hasil = BMI_Card(
-                        document.data["date"].toString(),
+                    val hasil = BMI_Result(
+                        document.data["namaAkun"].toString(),
                         document.data["age"].toString(),
                         document.data["weight"].toString(),
                         document.data["height"].toString(),
                         document.data["scoreBMI"].toString(),
-                        document.data["statusBMI"].toString()
+                        document.data["statusBMI"].toString(),
+                        document.data["date"].toString()
                     )
                     listDataBMI_History.add(hasil)
                 }
@@ -58,7 +59,7 @@ class BMI_History : AppCompatActivity() {
                     adapterP.setOnItemClickCallback(object :
                         adapterBMI_History.OnItemClickCallback {
                         // Saat card ditekan
-                        override fun onItemClicked(data: BMI_Card) {
+                        override fun onItemClicked(data: BMI_Result) {
                             val intent = Intent(this@BMI_History, BMI_Calculator::class.java)
                             intent.putExtra("kirimData", data)
                             startActivity(intent)
