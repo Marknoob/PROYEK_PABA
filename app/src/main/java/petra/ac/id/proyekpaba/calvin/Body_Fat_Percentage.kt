@@ -120,6 +120,50 @@ class Body_Fat_Percentage : AppCompatActivity() {
         val btn_calculate = findViewById<Button>(R.id.btn_calculate)
 
 
+        /*// Age
+        var ageValue: Int
+        btnPlusAge.setOnClickListener {
+            if(edt_age.text.isNotEmpty()) {
+                ageValue = Integer.parseInt(edt_age.text.toString())
+                edt_age.setText("${ageValue + 1}")
+            } else {
+                edt_age.setText("1")
+            }
+        }
+        btnMinusAge.setOnClickListener {
+            if(edt_age.text.isNotEmpty()) {
+                ageValue = Integer.parseInt(edt_age.text.toString())
+                if (ageValue > 0) {
+                    edt_age.setText("${ageValue - 1}")
+                }
+            } else {
+                edt_age.setText("0")
+            }
+        }*/
+
+        // Age
+        var ageValue: Int
+        btn_plusAge.setOnClickListener {
+            if(edt_age.text.isNotEmpty()) {
+                ageValue = Integer.parseInt(edt_age.text.toString())
+                edt_age.setText("${ageValue + 1}")
+            } else {
+                edt_age.setText("1")
+            }
+        }
+        btn_minusAge.setOnClickListener {
+            if(edt_age.text.isNotEmpty()) {
+                ageValue = Integer.parseInt(edt_age.text.toString())
+                if (ageValue > 0) {
+                    edt_age.setText("${ageValue - 1}")
+                }
+            } else {
+                edt_age.setText("0")
+            }
+        }
+
+        
+
 
         // Contoh penggunaan
         GlobalScope.launch(Dispatchers.Main) {
