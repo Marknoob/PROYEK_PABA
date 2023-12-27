@@ -24,7 +24,7 @@
             android:name=".calvin.Daily_Calorie_Requirements"
             android:exported="false" />
         <activity
-            android:name=".billy.Body_Fat_Percentage"
+            android:name=".calvin.Body_Fat_Percentage"
             android:exported="false" />
         <activity
             android:name=".calvin.Ideal_Weight"
