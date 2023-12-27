@@ -8,16 +8,35 @@
     android:background="#222831"
     >
 
-    <Button
-        android:id="@+id/btn_backhome"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
-        android:text="Back"
-        android:backgroundTint="#7D0A0A"
-        />
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/btn_backhome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Back"
+            android:backgroundTint="#7D0A0A"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Body Fat Percentage"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textColor="#EEEEEE"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -31,14 +50,7 @@
             android:background="#222831"
             tools:context=".calvin.Body_Fat_Percentage">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Body Fat Percentage"
-                android:textAlignment="center"
-                android:textSize="30dp"
-                android:textColor="#EEEEEE"
-                android:textStyle="bold" />
+
 
 
             <!--Age-->
