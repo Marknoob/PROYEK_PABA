@@ -312,6 +312,25 @@ class Body_Fat_Percentage : AppCompatActivity() {
                         score_fatmass.text = "Body Fat Mass: ${bodyFatInfo.fatMass}"
                         score_leanbodymass.text = "Lean Body Mass: ${bodyFatInfo.leanBodyMass}"
                         score_bmimethod.text = "Body Fat (BMI method): ${bodyFatInfo.bmiMethod}"
+
+                        //Simpan ke database
+                        val databaru = databodyfat(
+                            age.toString(),
+                            genderValue,
+                            weight.toString(),
+                            height.toString(),
+                            neck.toString(),
+                            waist.toString(),
+                            hip.toString(),
+                            bodyFatInfo.navyMethod.toString(),
+                            bodyFatInfo.category,
+                            bodyFatInfo.fatMass.toString(),
+                            bodyFatInfo.leanBodyMass.toString(),
+                            bodyFatInfo.bmiMethod.toString()
+                        )
+                        db.collection("tb_bodyfat")
+                            .add(databaru)
+
                     } catch (e: Exception) {
                         Toast.makeText(
                             this@Body_Fat_Percentage,
