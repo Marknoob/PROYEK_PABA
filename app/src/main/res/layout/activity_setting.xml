@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fontFamily="sans-serif-condensed-medium"
     android:orientation="vertical"
     android:padding="20dp"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:background="#E3EBED"
     tools:context=".Setting">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,26 +48,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp"
-        android:backgroundTint="#E60404"
+        android:backgroundTint="#FD6861"
         android:text="Delete This Account" />
 
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#E60404"
+        android:backgroundTint="#FD6861"
         android:text="Logout" />
 
     <Button
         android:id="@+id/btn_editProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#3FB3BA"
         android:text="Edit Profile" />
 
     <Button
         android:id="@+id/btn_backToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1C3C4C"
         android:text="Back" />
 
 

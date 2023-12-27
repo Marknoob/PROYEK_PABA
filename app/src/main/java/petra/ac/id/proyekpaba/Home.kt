@@ -80,9 +80,6 @@ class Home: AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-
         val btn_bodyfat = findViewById<Button>(R.id.btnbodyfat)
         btn_bodyfat.setOnClickListener {
             val intent = Intent(this@Home, Body_Fat_Percentage::class.java)

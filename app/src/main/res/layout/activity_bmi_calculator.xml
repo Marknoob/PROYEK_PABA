@@ -58,20 +58,24 @@
                     app:layout_constraintEnd_toEndOf="@+id/textView1"
                     app:layout_constraintStart_toStartOf="@+id/textView1"
                     app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
                 <Button
                     android:id="@+id/btn_plusAge"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="32dp"
+                    android:backgroundTint="#5EA576"
                     android:text="+"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_age"
                     app:layout_constraintEnd_toStartOf="@+id/ed_age"
                     app:layout_constraintTop_toTopOf="@+id/ed_age" />
+
                 <Button
                     android:id="@+id/btn_minusAge"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="32dp"
+                    android:backgroundTint="#FD6861"
                     android:text="-"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_age"
                     app:layout_constraintStart_toEndOf="@+id/ed_age"
@@ -119,6 +123,7 @@
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="32dp"
+                    android:backgroundTint="#5EA576"
                     android:text="+"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_weight"
                     app:layout_constraintEnd_toStartOf="@+id/ed_weight"
@@ -128,6 +133,7 @@
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="32dp"
+                    android:backgroundTint="#FD6861"
                     android:text="-"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_weight"
                     app:layout_constraintStart_toEndOf="@+id/ed_weight"
@@ -175,6 +181,7 @@
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="32dp"
+                    android:backgroundTint="#5EA576"
                     android:text="+"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_height"
                     app:layout_constraintEnd_toStartOf="@+id/ed_height"
@@ -185,6 +192,7 @@
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="32dp"
+                    android:backgroundTint="#FD6861"
                     android:text="-"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_height"
                     app:layout_constraintStart_toEndOf="@+id/ed_height"
@@ -197,6 +205,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:backgroundTint="#3FB3BA"
             android:text="Calculate" />
 
         <androidx.cardview.widget.CardView
@@ -251,12 +260,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:backgroundTint="#3FB3BA"
             android:text="Lihat History" />
 
         <Button
             android:id="@+id/btn_backToHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#1C3C4C"
             android:text="Back" />
 
     </LinearLayout>
