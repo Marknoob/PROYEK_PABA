@@ -7,7 +7,7 @@
     android:fontFamily="sans-serif-condensed-medium"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".Setting">
+    tools:context=".EditProfile">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,23 +19,25 @@
             android:src="@drawable/account"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/tv_profileName"
+        <EditText
+            android:id="@+id/edt_profileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
             android:textSize="25dp"
             android:textStyle="bold"
+            android:backgroundTint="@color/white"
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_profileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="80dp"
             android:text="TextView"
             android:textSize="20dp"
             app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -43,25 +45,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btn_deleteAccount"
+        android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:backgroundTint="#E60404"
-        android:text="Delete This Account" />
-
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#E60404"
-        android:text="Logout" />
-
-    <Button
-        android:id="@+id/btn_editProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Edit Profile" />
+        android:layout_marginTop="450dp"
+        android:text="Save Changes" />
 
     <Button
         android:id="@+id/btn_backToHome"

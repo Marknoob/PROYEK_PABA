@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PROYEKPABA"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".Setting"
             android:exported="false" />
         <activity

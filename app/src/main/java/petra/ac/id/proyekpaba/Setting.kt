@@ -81,6 +81,13 @@ class Setting : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val _btnEditProfile = findViewById<Button>(R.id.btn_editProfile)
+        _btnEditProfile.setOnClickListener {
+            val intent = Intent(this@Setting, EditProfile::class.java)
+            startActivity(intent)
+        }
+
+
         val _btnBackToHome = findViewById<Button>(R.id.btn_backToHome)
         _btnBackToHome.setOnClickListener {
             val intent = Intent(this@Setting, Home::class.java)

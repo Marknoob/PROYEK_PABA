@@ -59,11 +59,11 @@ class Home: AppCompatActivity() {
                         tvScore.text = "${lastResult.getString("scoreBMI")}"
                         tvStatus.text = "${lastResult.getString("statusBMI")}"
                     } else {
-                        tvAge.text = "Age: Data tidak ditemukan"
-                        tvWeight.text = "Weight: Data tidak ditemukan"
-                        tvHeight.text = "Height: Data tidak ditemukan"
-                        tvScore.text = "BMI Score: Data tidak ditemukan"
-                        tvStatus.text = "BMI Status: Data tidak ditemukan"
+                        tvAge.text = "Nan"
+                        tvWeight.text = "Nan"
+                        tvHeight.text = "Nan"
+                        tvScore.text = "Nan"
+                        tvStatus.text = "Nan"
                     }
                 }
             }

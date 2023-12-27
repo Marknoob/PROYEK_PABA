@@ -23,10 +23,10 @@ class Login : AppCompatActivity() {
 
         val _btnLogin = findViewById<Button>(R.id.btn_login)
         _btnLogin.setOnClickListener {
-            val intent = Intent(this@Login, Home::class.java)
-            startActivity(intent)
+//            val intent = Intent(this@Login, Home::class.java)
+//            startActivity(intent)
 
-            /*val usernameOrEmail = inputUsernameOrEmail.text.toString()
+            val usernameOrEmail = inputUsernameOrEmail.text.toString()
             val password = inputPassword.text.toString()
 
             if (usernameOrEmail.isNotEmpty() && password.isNotEmpty()) {
@@ -119,7 +119,7 @@ class Login : AppCompatActivity() {
                     "Data tidak boleh kosong",
                     Toast.LENGTH_SHORT
                 ).show()
-            }*/
+            }
         }
 
         val _txtForgotPass = findViewById<TextView>(R.id.txt_forgotPassword)
