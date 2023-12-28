@@ -36,7 +36,7 @@ class bodyfathistory : AppCompatActivity() {
     }
 
     fun tampilkanData() {
-        db.collection("tbbodyfat")
+        db.collection("tb_bodyfat")
             .get()
             .addOnSuccessListener {
                     result ->
