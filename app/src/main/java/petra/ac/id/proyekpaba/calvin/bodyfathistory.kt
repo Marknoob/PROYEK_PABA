@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import petra.ac.id.proyekpaba.Home
+import petra.ac.id.proyekpaba.Login
 import petra.ac.id.proyekpaba.R
 
 class bodyfathistory : AppCompatActivity() {
@@ -87,6 +88,40 @@ class bodyfathistory : AppCompatActivity() {
                         }
 
                         override fun delData(pos: Int) {
+                            val datatodelete = data_bodyfathistory[pos].age
+
+                            // Hapus dokumen user dari Firestore berdasarkan email
+                            val collectionRef = db.collection("tb_bodyfat")
+                            val query = collectionRef.whereEqualTo("age", datatodelete)
+
+                            query.get()
+                                .addOnSuccessListener { result ->
+                                    for (document in result) {
+                                        document.reference.delete()
+                                            .addOnSuccessListener {
+
+                                                /*Toast.makeText(
+                                                    this,
+                                                    "Akun Berhasil Dihapus",
+                                                    Toast.LENGTH_LONG
+                                                ).show()*/
+
+                                                /*val intent = Intent(this@bodyfathistory, Login::class.java)
+                                                startActivity(intent)*/
+                                            }
+                                            .addOnFailureListener { e ->
+                                                print("ERROR: $e")
+                                                /*Toast.makeText(
+                                                    this,
+                                                    "Akun Gagal Dihapus",
+                                                    Toast.LENGTH_LONG
+                                                ).show()*/
+                                            }
+                                    }
+                                }
+
+                        }
+                       /* override fun delData(pos: Int) {
                             AlertDialog.Builder(this@bodyfathistory)
                                 .setTitle("Hapus Data")
                                 .setMessage("Apakah anda yakin ingin menghapus data?")
@@ -103,7 +138,7 @@ class bodyfathistory : AppCompatActivity() {
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }).show()
-                        }
+                        }*/
                     })
                 } else {
                     Toast.makeText(
