@@ -70,7 +70,7 @@ class bodyfathistory : AppCompatActivity() {
                     adapterP.setOnItemClickCallback(object :
                         adapterBodyFat.OnItemClickCallback {
                         override fun onItemClicked(data: databodyfat) {
-                            val intent = Intent(this@bodyfathistory, Body_Fat_Percentage::class.java)
+                            val intent = Intent(this@bodyfathistory, Edit_Bodyfat::class.java)
                             intent.putExtra("kirimDatabodyfat", data)
                             /*intent.putExtra("age", data.age)
                             intent.putExtra("gender", data.gender)
