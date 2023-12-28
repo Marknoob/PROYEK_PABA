@@ -42,8 +42,6 @@ class FormDataDiri : AppCompatActivity() {
         val btn_plusHip = findViewById<Button>(R.id.btn_plusHip)
         val btn_minusHip = findViewById<Button>(R.id.btn_minusHip)
 
-        val btn_back = findViewById<Button>(R.id.btn_backhome)
-
         // Age
         var ageValue: Int
         btn_plusAge.setOnClickListener {
@@ -216,6 +214,7 @@ class FormDataDiri : AppCompatActivity() {
                 }
             }
 
+            val btn_back = findViewById<Button>(R.id.btn_backTohome)
             btn_back.setOnClickListener {
                 val intent = Intent(this@FormDataDiri, Home::class.java)
                 startActivity(intent)

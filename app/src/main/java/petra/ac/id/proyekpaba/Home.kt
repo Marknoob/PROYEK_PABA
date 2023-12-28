@@ -21,14 +21,12 @@ import org.json.JSONObject
 import petra.ac.id.proyekpaba.Billy.Daily_Calorie_Requirements
 import petra.ac.id.proyekpaba.calvin.Body_Fat_Percentage
 import petra.ac.id.proyekpaba.markus.BMI_Calculator
-import petra.ac.id.proyekpaba.markus.BMI_Result
 import java.text.DateFormat
 import java.util.Calendar
 
 class Home : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()
-
 
     // API Request For BMI Calculator
     data class BmiInfo(val score: Double, val health: String, val healthyBmiRange: String)
