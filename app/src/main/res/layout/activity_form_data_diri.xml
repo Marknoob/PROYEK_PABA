@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fontFamily="sans-serif-condensed-medium"
     android:background="#222831"
-    >
+    tools:context=".FormDataDiri">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Body Fat Percentage"
+            android:text="Form Data Diri"
             android:textAlignment="center"
             android:textSize="30dp"
             android:textColor="#EEEEEE"
@@ -34,8 +35,6 @@
             android:layout_marginRight="10dp"
             android:textStyle="bold" />
     </LinearLayout>
-
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,9 +48,6 @@
             android:fontFamily="sans-serif-condensed-medium"
             android:background="#222831"
             tools:context=".calvin.Body_Fat_Percentage">
-
-
-
 
             <!--Age-->
             <androidx.cardview.widget.CardView
@@ -292,7 +288,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:backgroundTint="#00ADB5">
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -317,35 +312,33 @@
                         android:layout_width="100dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="12dp"
+                        android:textAlignment="center"
                         android:backgroundTint="@color/white"
                         android:ems="10"
                         android:hint="Neck (cm)"
                         android:inputType="number"
-                        android:textAlignment="center"
                         android:textSize="15dp"
                         app:layout_constraintEnd_toEndOf="@+id/tv_neck1"
                         app:layout_constraintStart_toStartOf="@+id/tv_neck1"
                         app:layout_constraintTop_toBottomOf="@+id/tv_neck1" />
-
                     <Button
                         android:id="@+id/btn_plusNeck"
                         android:layout_width="60dp"
                         android:layout_height="50dp"
                         android:layout_marginEnd="32dp"
-                        android:backgroundTint="#393E46"
                         android:text="+"
+                        android:backgroundTint="#393E46"
                         app:layout_constraintBottom_toBottomOf="@+id/ed_neck"
                         app:layout_constraintEnd_toStartOf="@+id/ed_neck"
                         app:layout_constraintTop_toTopOf="@+id/ed_neck"
                         app:layout_constraintVertical_bias="0.6" />
-
                     <Button
                         android:id="@+id/btn_minusNeck"
                         android:layout_width="60dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="32dp"
-                        android:backgroundTint="#393E46"
                         android:text="-"
+                        android:backgroundTint="#393E46"
                         app:layout_constraintBottom_toBottomOf="@+id/ed_neck"
                         app:layout_constraintStart_toEndOf="@+id/ed_neck"
                         app:layout_constraintTop_toTopOf="@+id/ed_neck" />
@@ -478,107 +471,17 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!--        button calculate-->
+            <!-- button save-->
             <Button
-                android:id="@+id/btn_calculate"
+                android:id="@+id/btn_saveDataForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="#31304D"
                 android:backgroundTint="#EEEEEE"
-                android:text="Calculate" />
-
-
-            <!--body fat result-->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-
-                android:backgroundTint="#00ADB5">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/hasil_BodyFat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="30dp"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:paddingBottom="20dp"
-                        android:text="Body Fat Result" />
-
-                    <TextView
-                        android:id="@+id/score_navyMethod"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:paddingBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:text="Body Fat (U.S. Navy Method): " />
-
-                    <TextView
-                        android:id="@+id/score_Category"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:paddingBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:text="Body Fat Category: " />
-
-                    <TextView
-                        android:id="@+id/score_fatMass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:paddingBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:text="Body Fat Mass: " />
-
-                    <TextView
-                        android:id="@+id/score_leanBodyMass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:paddingBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:text="Lean Body Mass: " />
-
-                    <TextView
-                        android:id="@+id/score_bmiMethod"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:paddingBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:text="Body Fat (BMI method): " />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <Button
-                android:id="@+id/btn_bodyfathistory"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:text="Lihat History"
-                android:textColor="#31304D"
-                android:backgroundTint="#EEEEEE"
-                />
-
+                android:text="Save" />
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>
