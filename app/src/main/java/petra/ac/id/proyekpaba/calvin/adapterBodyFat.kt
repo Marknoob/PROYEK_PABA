@@ -14,6 +14,7 @@ class adapterBodyFat(private val listdatabodyfat: ArrayList<databodyfat>)
 
     interface OnItemClickCallback {
         fun onItemClicked(data: databodyfat)
+        fun delData(pos: Int)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -33,6 +34,7 @@ class adapterBodyFat(private val listdatabodyfat: ArrayList<databodyfat>)
         var _tvfatMass: TextView = itemView.findViewById(R.id.tv_fatmass)
         var _tvleanBodyMass: TextView = itemView.findViewById(R.id.tv_leanbodymass)
         var _tvbmimethod: TextView = itemView.findViewById(R.id.tv_bmimethod)
+        var _btndelete: TextView = itemView.findViewById(R.id.btn_hapusdata)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -62,6 +64,10 @@ class adapterBodyFat(private val listdatabodyfat: ArrayList<databodyfat>)
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(databodyfat)
+        }
+
+        holder._btndelete.setOnClickListener {
+            onItemClickCallback.delData(position)
         }
     }
 

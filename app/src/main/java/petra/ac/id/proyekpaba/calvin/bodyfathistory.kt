@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.Firebase
@@ -84,6 +85,25 @@ class bodyfathistory : AppCompatActivity() {
                             intent.putExtra("bmiMethod", data.bmiMethod)*/
                             startActivity(intent)
                         }
+
+                        override fun delData(pos: Int) {
+                            AlertDialog.Builder(this@bodyfathistory)
+                                .setTitle("Hapus Data")
+                                .setMessage("Apakah anda yakin ingin menghapus data?")
+                                .setPositiveButton("Ya", { dialog, which ->
+                                    db.collection("tb_bodyfat")
+                                        .document(data_bodyfathistory[pos].age)
+                                        .delete()
+                                    tampilkanData()
+                                })
+                                .setNegativeButton("Tidak", { dialog, which ->
+                                    Toast.makeText(
+                                        this@bodyfathistory,
+                                        "Data Tidak Terhapus",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }).show()
+                        }
                     })
                 } else {
                     Toast.makeText(
@@ -94,5 +114,7 @@ class bodyfathistory : AppCompatActivity() {
                 }
             }
     }
+
+
 }
 
