@@ -517,6 +517,7 @@
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:paddingBottom="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Body Fat (U.S. Navy Method): " />
 
                     <TextView
@@ -526,6 +527,7 @@
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:paddingBottom="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Body Fat Category: " />
 
                     <TextView
@@ -535,6 +537,7 @@
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:paddingBottom="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Body Fat Mass: " />
 
                     <TextView
@@ -544,6 +547,7 @@
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:paddingBottom="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Lean Body Mass: " />
 
                     <TextView
@@ -553,11 +557,21 @@
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:paddingBottom="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Body Fat (BMI method): " />
-
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_bodyfathistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:text="Lihat History"
+                android:textColor="#31304D"
+                android:backgroundTint="#EEEEEE"
+                />
 
         </LinearLayout>
 

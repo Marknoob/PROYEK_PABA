@@ -130,6 +130,7 @@ class Body_Fat_Percentage : AppCompatActivity() {
         val score_bmimethod = findViewById<TextView>(R.id.score_bmiMethod)
 
         val btn_back = findViewById<Button>(R.id.btn_backhome)
+        val btn_bodyfathistory = findViewById<Button>(R.id.btn_bodyfathistory)
 
 
         /*// Age
@@ -351,6 +352,11 @@ class Body_Fat_Percentage : AppCompatActivity() {
 
         btn_back.setOnClickListener {
             val intent = Intent(this@Body_Fat_Percentage, Home::class.java)
+            startActivity(intent)
+        }
+
+        btn_bodyfathistory.setOnClickListener {
+            val intent = Intent(this@Body_Fat_Percentage, bodyfathistory::class.java)
             startActivity(intent)
         }
 
