@@ -15,6 +15,15 @@
         android:theme="@style/Theme.PROYEKPABA"
         tools:targetApi="31">
         <activity
+            android:name=".Billy.Edit_Daily_Calorie"
+            android:exported="false" />
+        <activity
+            android:name=".Billy.Track_Calorie"
+            android:exported="false" />
+        <activity
+            android:name=".Billy.Daily_Calorie_Requirements"
+            android:exported="false" />
+        <activity
             android:name=".calvin.Edit_Bodyfat"
             android:exported="false" />
         <activity
@@ -28,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name=".markus.BMI_History"
-            android:exported="false" />
-        <activity
-            android:name=".calvin.Daily_Calorie_Requirements"
             android:exported="false" />
         <activity
             android:name=".calvin.Body_Fat_Percentage"

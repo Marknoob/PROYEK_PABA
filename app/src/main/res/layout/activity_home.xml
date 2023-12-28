@@ -193,6 +193,12 @@
             android:text="Body fat"
             />
 
+        <Button
+            android:id="@+id/btn_daily_calorie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily Calorie" />
+
 
     </LinearLayout>
 
