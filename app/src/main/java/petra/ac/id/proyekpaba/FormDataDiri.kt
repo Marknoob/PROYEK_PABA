@@ -201,8 +201,8 @@ class FormDataDiri : AppCompatActivity() {
                 edt_hip.text.isNotEmpty()
                 ) {
 
-                val dataBaru = DataDiri(age, genderValue, weight, height, neck, waist, hip)
                 if (userName != null) {
+                    val dataBaru = DataDiri(userName, age, genderValue, weight, height, neck, waist, hip)
                     db.collection("tbUserData")
                         .document(userName)
                         .set(dataBaru)

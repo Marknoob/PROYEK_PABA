@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DataDiri(
+    var name: String,
     var age: String,
     var gender: String,
     var weight: String,
